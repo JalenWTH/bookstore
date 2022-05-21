@@ -1,0 +1,41 @@
+<html>
+<head>
+{% load static %}
+<link rel='stylesheet' href="{% static 'bookstore/stylesheets/signup_style.css' %}">
+<title>Signup</title>
+</head>
+
+<body>
+<div id='boxdiv'>
+	<h3 style='text-align:center;'>Signup</h3>
+	<form method='post'>
+	{% csrf_token %}
+		<ul id='fieldslist'>
+			<label for='{{form.fname.name}}'>{{form.fname.label}}</label>
+			<li class='field'>{{form.fname}}</li><br>
+			<label for='form.lname.name}}'>{{form.lname.label}}</label>
+			<li class='field'>{{form.lname}}</li><br>
+			<label for='{{form.phone.name}}'>{{form.phone.label}}</label>
+			<li class='field'>{{form.phone}}</li><br>
+			<label for='{{form.email.name}}'>{{form.email.label}}</label>
+			<li class='field'>{{form.email}}</li><br>
+			<label for='form.password.name}}'>{{form.password.label}}</label>
+			<li class='field'>{{form.password}}</li><br>
+			<input id='submit' type='submit' name='submit'>
+		</ul>
+	</form>
+	{% if signed_up == True %}
+		<h4>An account with this email is already registered</h4>
+	{% endif %}
+	
+	{% if valid == False %}
+		<h4>You entered invalid data</h4>
+	{% endif %}
+</div>
+
+<script>
+
+</script>
+
+</body>
+</html>

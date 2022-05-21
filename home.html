@@ -1,0 +1,26 @@
+<html>
+<head>
+<title>Home</title>
+{% load static %}
+<link rel='stylesheet' href="{% static 'bookstore/stylesheets/home_style.css' %}">
+
+<body>
+<div id='bardiv'>
+	<div class='boxdiv'>
+		{% load static %}
+		<img src="{% static 'bookstore/images/'|add:display_books.0.image_url %}">
+		<a href="{% url 'Order' book_id=display_books.0.book_id %}">{{display_books.0.title}}</a>
+	</div>
+	<div class='boxdiv'>
+		{% load static %}
+		<img src="{% static 'bookstore/images/'|add:display_books.1.image_url %}">
+		<a href="{% url 'Order' book_id=display_books.1.book_id %}">{{display_books.1.title}}</a>
+	</div>
+	<div class='boxdiv'>
+		{% load static %}
+		<img src="{% static 'bookstore/images/'|add:display_books.2.image_url %}">
+		<a href="{% url 'Order' book_id=display_books.2.book_id %}">{{display_books.2.title}}</a>
+	</div>
+</div>
+</body>
+</html>

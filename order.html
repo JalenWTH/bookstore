@@ -1,0 +1,20 @@
+<html>
+<head>
+<title>Order</title>
+{% load static %}
+<link rel='stylesheet' href="{% static 'bookstore/stylesheets/order_style.css' %}">
+</head> 
+
+<body>
+<div id='boxdiv'>
+	{% load static %}
+	<img id='book_image' src="{% static 'bookstore/images/'|add:book.0.image_url %}">
+	<h4>{{book.0.title}}</h4>
+	<h4>By</h4>
+	<h4>{{book.0.author_fname}} {{book.0.author_lname}}</h4>
+	<h4>Copyright year: {{book.0.copyright_year}}</h4>
+	<a href="{% url 'Checkout' book_id=book.0.book_id %}">Order now</a>
+</div>
+	
+	
+	

@@ -1,0 +1,19 @@
+body {
+	background-color:#D2B48C;
+}
+
+img {
+	height:300px;
+	width:200px;
+	float:left;
+	display:inline-block;
+	margin:10px;
+}
+
+#boxdiv {
+	height:350px;
+	width:350px;
+	background-color:#DAA520;
+	padding:15px;
+	margin:300px auto 0 auto;
+}

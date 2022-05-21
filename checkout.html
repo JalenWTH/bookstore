@@ -1,0 +1,36 @@
+<html>
+<head>
+<title>Checkout</title>
+{% load static %}
+<link rel='stylesheet' href="{% static 'bookstore/stylesheets/checkout_style.css' %}">
+</head>
+
+<body>
+<div id='boxdiv'>
+	<h4>Order for:</h4>
+	<h4>{{book.0.title}}</h4>
+	{% load static %}
+	<img src="{% static 'bookstore/images/'|add:book.0.image_url %}">
+	<form method='post'>
+		<ul>
+			<label for='{{form.fname.name}}'>{{form.fname.label}}</label>
+			<li class='field'>{{form.fname}}</li><br>
+			<label for='{{form.lname.name}}'>{{form.lname.label}}</label>
+			<li class='field'>{{form.lname}}</li><br>
+			<label for='{{form.email.name}}'>{{form.email.label}}</label>
+			<li class='field'>{{form.email}}</li><br>
+			<label for='form.phone.name'>{{form.phone.label}}</label>
+			<li class='field'>{{form.phone}}</li><br>
+			<label for='form.street_address.name'>{{form.street_address.label}}</label>
+			<li class='field'>{{form.street_address}}</li><br>
+			<label for='{{form.city.name}}'>{{form.city.label}}</label>
+			<li class='field'>{{form.city}}</li><br>
+			<label for='{{form.state.name}}'>{{form.state.label}}</label>
+			<li class='field'>{{form.state}}</li><br>
+			<label for='{{form.zip_code.name}}'>{{form.zip_code.label}}</label>
+			<li class='field'>{{form.zip_code}}</li><br>
+			<input id='submit' type='submit' name='submit' value='Confirm'>
+		</ul>
+	</form>
+</div>
+

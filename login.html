@@ -1,0 +1,36 @@
+<html>
+<head>
+{% load static %}
+<link rel='stylesheet' href="{% static 'bookstore/stylesheets/login_style.css'%}">
+<title>Login</title>
+<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+<div id='boxdiv'>
+	<h3 style='text-align:center;'>Login</h3>
+	<form method='post'>
+	{% csrf_token %} 
+		<ul>
+			<label for='{{form.email.name}}'>{{form.email.label}}</label>
+			<li class='field'>{{form.email}}</li><br>
+			<label for='form.password.name}}'>{{form.password.label}}</label>
+			<li class='field'>{{form.password}}</li><br>
+			<input id='submit' type='submit' name='submit'>
+			<button type='button' id='signup_button'>Signup</button>
+		</ul>
+	</form>
+	{% if valid == False %}
+		<h4 style='color:red;'>Your email or password are incorrect.</h4>
+	{% endif %}
+</div>
+
+<script>
+$(document).ready(function() {
+	$('#signup_button').click(function() {
+		window.open('http://127.0.0.1:8000/bookstore/signup')
+	})
+})
+</script>
+</body>
+</html>

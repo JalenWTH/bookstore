@@ -1,0 +1,23 @@
+body {
+	background-color:#D2B48C;
+}
+
+#boxdiv {
+	background-color:#DAA520;
+	height:600px;
+	width:300px;
+	margin:5px solid black;
+	padding:15px;
+}
+
+.field {
+	height:25px;
+	width:100px;
+	font-size:15px;
+	margin:3px solid black;
+}
+
+img {
+	height:75px;
+	width:50px;
+}
